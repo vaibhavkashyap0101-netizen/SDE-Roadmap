@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SDE Roadmap for Students</title>
+<style>
+:root{color-scheme:light;--ink:#182841;--muted:#52627a;--blue:#214bc4;--line:#dce5f1;--paper:#f4f7fc;--mint:#c8f8df}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+a{color:var(--blue)}
+button,select,input{font:inherit}
+button,select{cursor:pointer}
+:focus-visible{outline:3px solid #3273e4;outline-offset:4px}
+.wrap{width:min(1100px,calc(100% - 36px));margin:auto}
+header{background:#fff;border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:15px 0}
+nav a{text-decoration:none;color:var(--ink);font-weight:650}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{background:#19378d;color:white;border-radius:10px;padding:4px 9px;font-weight:800}
+.links{display:flex;gap:18px;flex-wrap:wrap}
+.hero{background:radial-gradient(ellipse at 90% 0%,#314dc2,transparent 62%),#111e50;color:white;padding:64px 0}
+.hero-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:42px;align-items:center}
+.kicker{margin:0;color:#b4c5ff;font-size:.84rem;font-weight:750;letter-spacing:.09em;text-transform:uppercase}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(2.4rem,6vw,4.5rem);line-height:1.02;letter-spacing:-.05em;margin:14px 0 20px}
+h1 em{color:var(--mint);font-style:normal}
+.hero p:not(.kicker){color:#e0e8ff;max-width:56ch}
+.cta{display:inline-block;padding:11px 18px;background:var(--mint);color:#102e29;border-radius:10px;font-weight:750;text-decoration:none}
+.plan{border:1px solid #6279cf;border-radius:20px;background:#172962;padding:24px}
+.plan h2{font-size:1.15rem;margin-bottom:12px}
+.plan label{display:block;font-size:.9rem;color:#e0e8ff}
+select{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:white;color:var(--ink);margin:6px 0 12px}
+.plan p:last-child{margin-bottom:0}
+main{padding:38px 0 54px}
+section{margin-bottom:44px;scroll-margin-top:20px}
+h2{font-size:clamp(1.55rem,4vw,2.15rem);letter-spacing:-.03em;line-height:1.2;margin-bottom:10px}
+.sub{color:var(--muted);max-width:72ch}
+.progress-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 20px;margin:22px 0}
+.progress-title{display:flex;justify-content:space-between;gap:12px;font-weight:700}
+progress{width:100%;height:12px;accent-color:var(--blue)}
+small{color:var(--muted)}
+details{background:white;border:1px solid var(--line);border-radius:14px;margin:9px 0}
+details[open]{border-color:#99aeee}
+summary{cursor:pointer;padding:14px 18px;font-weight:740}
+summary::marker{color:var(--blue)}
+.weeks{font-size:.83rem;color:var(--muted);font-weight:600;margin-left:8px}
+.lesson{padding:0 20px 16px}
+.lesson p{color:var(--muted);margin-bottom:8px}
+.task{display:flex;align-items:flex-start;gap:9px;padding:7px 0;cursor:pointer}
+.task input{width:17px;height:17px;margin-top:5px;flex:none;accent-color:var(--blue)}
+.task:has(input:checked){color:#176044}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:white;border:1px solid var(--line);border-radius:15px;padding:19px}
+.card h3{margin-bottom:8px;font-size:1.06rem}
+.card p{color:var(--muted);margin-bottom:9px}
+.card p:last-child{margin-bottom:0}
+footer{border-top:1px solid var(--line);padding:21px 0;color:var(--muted)}
+@media(max-width:730px){.hero-grid,.cards{grid-template-columns:1fr}.hero{padding:40px 0}.hero-grid{gap:25px}.links{gap:12px;font-size:.9rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+<nav class="wrap" aria-label="Main navigation">
+<a href="#" class="brand"><span class="logo">&lt;/&gt;</span> SDE Roadmap</a>
+<div class="links"><a href="#roadmap">Roadmap</a><a href="#projects">Projects</a><a href="#placement">Placement</a></div>
+</nav>
+</header>
+
+<div class="hero">
+<div class="wrap hero-grid">
+<div>
+<p class="kicker">Student guide · Beginner to interview prep</p>
+<h1>Build your path to <em>software engineering.</em></h1>
+<p>Start with one programming language, build projects you can explain, and prepare for software engineering internships and placements.</p>
+<a class="cta" href="#roadmap">Start the roadmap ↓</a>
+</div>
+<aside class="plan" aria-labelledby="plan-title">
+<h2 id="plan-title">Your weekly study plan</h2>
+<label for="pace">Time you can study each week</label>
+<select id="pace"><option value="5">5 hours</option><option value="8" selected>8 hours</option><option value="12">12 hours</option></select>
+<p id="schedule" aria-live="polite"></p>
+</aside>
+</div>
+</div>
+
+<main class="wrap">
+<section id="roadmap">
+<h2>Learning roadmap</h2>
+<p class="sub">Follow the stages in order. The week ranges are a starting plan for about 8 hours per week. Spend extra time on any stage where you still need help finishing the practice tasks.</p>
+<div class="progress-box">
+<div class="progress-title"><span>Checklist progress</span><span id="count" aria-live="polite"></span></div>
+<progress id="progress" aria-label="Roadmap checklist progress" max="1" value="0"></progress><br>
+<small id="storage-note">Progress is saved in this browser.</small>
+</div>
+<div id="stages"></div>
+</section>
+
+<section id="projects">
+<h2>Portfolio projects</h2>
+<p class="sub">Choose a project you can demo in two minutes. Include a README with setup steps, screenshots, sample data and the decisions you made.</p>
+<div class="cards">
+<article class="card"><h3>Expense Tracker</h3><p>Add, edit and delete expenses. Filter by month and category, show totals and save entries across reloads.</p><p><strong>Test:</strong> Empty lists, invalid amounts and a page reload.</p></article>
+<article class="card"><h3>Placement Portal</h3><p>Build job listings, student applications and an admin review screen. Store applications in SQL and filter by status.</p><p><strong>Test:</strong> Duplicate applications and a student trying to view someone else’s application.</p></article>
+<article class="card"><h3>Campus Event Booking</h3><p>Let students reserve seats and cancel bookings. Add a capacity limit and a dashboard for organisers.</p><p><strong>Test:</strong> Two people booking the last seat at the same time.</p></article>
+</div>
+</section>
+
+<section id="placement">
+<h2>Internships and placements</h2>
+<div class="cards">
+<article class="card"><h3>Prepare your application</h3><p>Make a one-page résumé. Describe what you built, link your best projects, and add numbers when you can verify them. Track each application and deadline.</p></article>
+<article class="card"><h3>Practice technical rounds</h3><p>Use a 45-minute mock session. Clarify the problem, explain a simple approach, improve it, state time and space complexity, then test with edge cases.</p></article>
+<article class="card"><h3>Practice project and HR rounds</h3><p>Explain one design trade-off and one bug you fixed. Prepare short examples of teamwork, disagreement and learning using Situation, Task, Action and Result.</p></article>
+</div>
+</section>
+</main>
+<footer><div class="wrap">SDE Roadmap for Students</div></footer>
+
+<script>
+const stages = [
+  ["Programming fundamentals","Weeks 1–3","Choose one language for daily practice. Learn variables, control flow, functions, collections and basic debugging.","Write a grade calculator that handles invalid input.","Build a command-line to-do app that can add, list and remove tasks.","Use a debugger or print statements to trace and fix a bug."],
+  ["Git, GitHub and the terminal","Weeks 4–5","Learn directories, command-line basics, commits, branches and pull requests.","Create a repository and write a README with reproducible setup steps.","Make a feature branch, open a pull request and merge it.","Resolve a simple merge conflict in a practice repository."],
+  ["Data structures and algorithms","Weeks 6–9","Start with arrays, strings and hash maps. Continue with stacks, queues, trees, graphs and basic dynamic programming.","Solve and explain one problem each using a hash map, two pointers, a sliding window and binary search.","Implement BFS and DFS and explain when to use each.","Solve a simple dynamic programming problem and explain its state, recurrence and complexity."],
+  ["Computer science and SQL","Weeks 10–12","Study OOP, processes and threads, HTTP, networking basics and relational databases.","Model a student-course enrolment system with primary and foreign keys.","Write JOIN, GROUP BY and aggregate queries against your schema.","Explain a process versus a thread, and trace a request from the browser to a server."],
+  ["Frontend and backend development","Weeks 13–16","Learn HTML, CSS and JavaScript, then connect a web interface to an API and a database. Pick one backend stack you can work with comfortably.","Build a responsive form with loading, success and error states.","Create and test API endpoints for creating, reading, updating and deleting records.","Validate input on the server and test that users can modify only their own records."],
+  ["Testing, deployment and portfolio","Weeks 17–20","Finish a project with one complete user flow. Document how to run it, test it and demo it.","Write unit tests for business rules and an integration test for a database-backed request.","Deploy a demo with sample data or record a walkthrough with local setup steps.","Write down one trade-off, one bug you fixed and what you would improve next."],
+  ["Interview preparation","Weeks 21–24","Mix timed coding, SQL, CS fundamentals and project discussion. Spend more practice time on mistakes that recur.","Complete two timed coding mocks and review the mistakes.","Explain how your project stores data, handles errors and would cope with more users.","Finish a one-page résumé and apply to a role whose requirements match your skills."]
+];
+
+const plans = {
+  5: "2 hours learning · 2 hours practice · 1 hour project work. At this pace, spread each stage over more weeks.",
+  8: "2 hours learning · 3 hours practice · 3 hours project work. Use the week ranges below as your starting plan.",
+  12: "3 hours learning · 4 hours practice · 5 hours project work. Use extra practice time for review, testing and mock interviews."
+};
+const key = "student-sde-roadmap-v1";
+const count = document.querySelector("#count");
+const progress = document.querySelector("#progress");
+const storageNote = document.querySelector("#storage-note");
+const pace = document.querySelector("#pace");
+const schedule = document.querySelector("#schedule");
+let saved = {};
+
+try {
+  saved = JSON.parse(localStorage.getItem(key) || "{}") || {};
+} catch {
+  storageNote.textContent = "Progress can be tracked during this session.";
+}
+
+if (Object.hasOwn(plans, saved.pace)) pace.value = saved.pace;
+
+document.querySelector("#stages").innerHTML = stages.map(([title, weeks, description, ...tasks], stageIndex) => `
+  <details ${stageIndex === 0 ? "open" : ""}>
+    <summary>${title}<span class="weeks">${weeks}</span></summary>
+    <div class="lesson">
+      <p>${description}</p>
+      ${tasks.map((task, taskIndex) => `<label class="task"><input type="checkbox" value="${stageIndex}-${taskIndex}"><span>${task}</span></label>`).join("")}
+    </div>
+  </details>
+`).join("");
+
+const tasks = [...document.querySelectorAll(".task input")];
+const complete = new Set(Array.isArray(saved.complete) ? saved.complete : []);
+for (const task of tasks) task.checked = complete.has(task.value);
+
+function update(shouldSave) {
+  const checked = tasks.filter(task => task.checked).map(task => task.value);
+  count.textContent = `${checked.length} of ${tasks.length} complete`;
+  progress.max = tasks.length;
+  progress.value = checked.length;
+  schedule.textContent = plans[pace.value];
+  if (shouldSave) {
+    try {
+      localStorage.setItem(key, JSON.stringify({ complete: checked, pace: pace.value }));
+      storageNote.textContent = "Progress is saved in this browser.";
+    } catch {
+      storageNote.textContent = "Progress can be tracked during this session.";
+    }
+  }
+}
+
+document.querySelector("#stages").addEventListener("change", () => update(true));
+pace.addEventListener("change", () => update(true));
+update(false);
+</script>
+</body>
+</html>
